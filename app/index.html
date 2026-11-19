@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Leonida Trophy Atlas — GTA VI Trophy Guide &amp; Tracker</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="masthead">
+  <div class="masthead-title">
+    <p class="eyebrow">Grand Theft Auto VI &middot; PlayStation 5</p>
+    <h1>Leonida Trophy Atlas</h1>
+    <p class="tagline">Every one of the 55 trophies, mapped: what to do, where, in what order — and what you can miss.</p>
+  </div>
+  <div class="progress-card" aria-label="Platinum progress">
+    <p class="progress-count"><span id="earnedCount">0</span><span class="progress-total"> / 55 earned</span></p>
+    <div class="progress-bar" role="progressbar" aria-valuemin="0" aria-valuemax="55" aria-valuenow="0" id="progressBarWrap">
+      <div class="progress-fill" id="progressFill"></div>
+    </div>
+    <p class="progress-note" id="progressNote">The platinum unlocks when the other 54 are earned.</p>
+  </div>
+</header>
+
+<nav class="tabs" aria-label="Guide sections">
+  <button type="button" class="tab active" data-view="checklist" aria-current="page">Checklist</button>
+  <button type="button" class="tab" data-view="roadmap">Roadmap to Platinum</button>
+  <button type="button" class="tab" data-view="missables">Missables</button>
+</nav>
+
+<section id="view-checklist" class="view">
+  <div class="controls">
+    <label class="search-label">Search
+      <input id="search" type="search" placeholder="Trophy name, guide word, place…" autocomplete="off">
+    </label>
+    <fieldset class="kind-filter">
+      <legend>Kind</legend>
+      <button type="button" class="chip active" data-kind="all">All</button>
+      <button type="button" class="chip" data-kind="story">Story</button>
+      <button type="button" class="chip" data-kind="missable">Missable</button>
+      <button type="button" class="chip" data-kind="collectibles">Collectibles</button>
+      <button type="button" class="chip" data-kind="activities">Activities</button>
+      <button type="button" class="chip" data-kind="online">Online</button>
+    </fieldset>
+    <label class="grade-label">Grade
+      <select id="grade">
+        <option value="all">All grades</option>
+        <option value="platinum">Platinum</option>
+        <option value="gold">Gold</option>
+        <option value="silver">Silver</option>
+        <option value="bronze">Bronze</option>
+      </select>
+    </label>
+    <label class="spoiler-label">
+      <input id="spoilers" type="checkbox"> Hide story spoilers
+    </label>
+    <div class="io-buttons">
+      <button id="exportBtn" type="button">Export progress</button>
+      <button id="resetBtn" type="button" class="quiet">Reset progress</button>
+      <label class="import-label">Import progress
+        <input id="importFile" type="file" accept="application/json,.json">
+      </label>
+    </div>
+  </div>
+  <p class="result-count" id="resultCount" aria-live="polite"></p>
+  <main class="layout">
+    <ul class="trophy-list" id="trophyList"></ul>
+    <aside class="detail" id="detailPanel" aria-live="polite">
+      <p class="detail-empty">Pick a trophy to read its guide, steps and sources.</p>
+    </aside>
+  </main>
+</section>
+
+<section id="view-roadmap" class="view hidden">
+  <h2>Roadmap to the Platinum</h2>
+  <p class="section-intro">Work the list in five passes, in this order. Each stage names the trophies it covers and why it comes where it does — the order is built from the official descriptions: story first, then the things the story can lock away, then the open-world clean-up.</p>
+  <ol class="roadmap" id="roadmapList"></ol>
+</section>
+
+<section id="view-missables" class="view hidden">
+  <h2>Missable Trophies</h2>
+  <p class="section-intro">A trophy is marked <strong>missable</strong> when its official description ties it to a one-time story moment, a choice, or a window that closes — something you cannot go back and do after the story moves on. Everything else can be earned in free roam after the credits.</p>
+  <div class="missable-rules">
+    <h3>How to read the flag</h3>
+    <ul>
+      <li><strong>Story moment:</strong> tied to a specific mission or chapter; replay it from the mission menu or start the moment before it passes.</li>
+      <li><strong>Choice:</strong> tied to a decision in a mission; pick the required option, or replay the mission and choose again.</li>
+      <li><strong>Window:</strong> tied to a limited-time event or a state that changes as the story advances; do it while the window is open.</li>
+    </ul>
+  </div>
+  <ul class="trophy-list missable-list" id="missableList"></ul>
+</section>
+
+<footer class="colophon">
+  <p>Official trophy names, descriptions and grades are shown as PlayStation publishes them. Guides are written in our own words for this atlas; each guide names its sources beside it. Data sources: Exophase and PSNProfiles. This is an unofficial fan guide — not affiliated with Rockstar Games, and it uses no Rockstar logo, artwork or game imagery.</p>
+  <p>Progress is stored only in this browser (localStorage). Export it to a file to keep a copy or move it to another browser.</p>
+  <p class="offline-note">Works fully offline: every file this page loads lives under app/, and it makes no network request at run time.</p>
+</footer>
+<noscript><p class="noscript">This guide needs JavaScript to load its trophy data and save your progress.</p></noscript>
+<script type="module" src="app.js"></script>
+</body>
+</html>
